@@ -73,41 +73,82 @@ namespace calculator
         
         private void add_Click(object sender, EventArgs e)
         {
-            option  = "+";                  // when the user enters + operator 
-            num1 = double.Parse(textBox1.Text); // it converts first number and sends it to the add method
+            try
+            {
+                option = "+";
+                num1 = double.Parse(textBox1.Text);
+
+                textBox1.Clear();
+            }
+            catch (FormatException )
+            {
+                MessageBox.Show("Enter number please!");
+            }
             
-            textBox.Clear(); // clears the textbox for second num2 
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
-            option = "-";
-            num1 = double.Parse(textBox1.Text);
-            
-            textBox.Clear();
+            try
+            {
+                option = "-";
+                num1 = double.Parse(textBox1.Text);
+
+                textBox1.Clear();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Enter number please!");
+            }
+
         }
+
         private void mulitply_Click(object sender, EventArgs e)
         {
-            option = "*";
-            num1 = double.Parse(textBox1.Text);
+            try
+            {
+                option = "*";
+                num1 = double.Parse(textBox1.Text);
 
-            textBox1.Clear();
+                textBox1.Clear();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Enter number please!");
+            }
+
         }
 
         private void divide_Click(object sender, EventArgs e)
         {
-            option = "/";
-            num1 = double.Parse(textBox1.Text);
+            try
+            {
+                option = "/";
+                num1 = double.Parse(textBox1.Text);
 
-            textBox1.Clear();
+                textBox1.Clear();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Enter number please!");
+            }
+
         }
 
         private void remainder_Click(object sender, EventArgs e)
         {
-            option = "%";
-            num1 = double.Parse(textBox1.Text);
+            try
+            {
+                option = "%";
+                num1 = double.Parse(textBox1.Text);
 
-            textBox1.Clear();
+                textBox1.Clear();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Enter number please!");
+            }
+
         }
 
         private void equalbutton_Click(object sender, EventArgs e)
