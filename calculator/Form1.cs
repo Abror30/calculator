@@ -112,24 +112,37 @@ namespace calculator
 
         private void equalbutton_Click(object sender, EventArgs e)
         {
-            num2 = double.Parse(textBox1.Text);
+            try 
+            {
+                num2 = double.Parse(textBox1.Text);
 
-            if (option.Equals("+")) 
-                res = num1 + num2;
+                if (option.Equals("+")) 
+                    res = num1 + num2;
             
-            if (option.Equals("-")) 
-                res = num1 - num2;
+                if (option.Equals("-")) 
+                    res = num1 - num2;
    
-            if (option.Equals("*")) 
-                res = num1 * num2;
+                if (option.Equals("*")) 
+                    res = num1 * num2;
 
-            if (option.Equals("/")) 
-                res = num1 / num2;
+                if (option.Equals("/")) 
+                    res = num1 / num2;
 
-            if (option.Equals("%")) 
-                res = num1 % num2;
+                if (option.Equals("%")) 
+                    res = num1 % num2;
 
-            textBox1.Text = res + "";
+                textBox1.Text = res + "";
+            }
+            catch (NullReferenceException efx)
+            {
+                MessageBox.Show(efx.Message);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+            
         }
 
         private void button11_Click(object sender, EventArgs e)
